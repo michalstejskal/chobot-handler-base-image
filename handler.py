@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-	val = user_code.handle_pes()
+	val = user_code.handle()
 	return "HELLO WROLD! vraceno z userCode: "+ val
 
 
