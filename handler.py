@@ -1,15 +1,15 @@
 from flask import Flask
 import requests
 import os
-import user_code as user_code
+from user_code.handler import handle
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def hello():
-	val = user_code.handle()
-	return "HELLO WROLD! vraceno z userCode: "+ val
+	user_code_response = handle()
+	return "HELLO WROLD! vraceno z userCode: "+ user_code_response
 
 
 if __name__ == "__main__":
