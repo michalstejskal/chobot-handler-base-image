@@ -1,18 +1,17 @@
-import json
-
 from flask import Flask
 import requests
 import os
-import user_code as user_code
+from user_code.handler import handle
+import json
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def hello():
-	val = user_code.handle()
-	responsse = {'response; '"HELLO WROLD! vraceno z userCode: " + val}
-	return json.loads(responsse)
+	user_code_response = handle()
+    responsse = {'response', 'HELLO WROLD! vraceno z userCode: ' + val}
+    return json.loads(responsse)
 
 
 if __name__ == "__main__":
