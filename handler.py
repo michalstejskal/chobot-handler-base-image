@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     user_code_response = handle()
-    responsse = {'response', 'HELLO WROLD! vraceno z userCode: ' + val}
+    responsse = {'response', 'HELLO WROLD! vraceno z userCode: ' + user_code_response}
     return json.loads(responsse)
 
 if __name__ == "__main__":
