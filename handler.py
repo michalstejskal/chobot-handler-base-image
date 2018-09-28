@@ -9,12 +9,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-	user_code_response = handle()
+    user_code_response = handle()
     responsse = {'response', 'HELLO WROLD! vraceno z userCode: ' + val}
     return json.loads(responsse)
 
-
 if __name__ == "__main__":
-	print("MOCK API SECOND STARTED")
-	app.run(debug=True, host="0.0.0.0", port=5000)
-
+    print("MOCK API SECOND STARTED")
+    app.run(debug=True, host="0.0.0.0", port=5000)
