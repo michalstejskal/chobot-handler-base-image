@@ -1,8 +1,6 @@
-from flask import Flask
-import requests
-import os
+from flask import Flask, jsonify
 from user_code.handler import handle
-import json
+
 
 app = Flask(__name__)
 
@@ -10,8 +8,8 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     user_code_response = handle()
-    responsse = {'response', 'HELLO WROLD! vraceno z userCode: ' + user_code_response}
-    return json.loads(responsse)
+    responsse = {'response': 'HELLO WROLD! vraceno z userCode: ' + user_code_response}
+    return jsonify(responsse)
 
 if __name__ == "__main__":
     print("MOCK API SECOND STARTED")
